@@ -1,0 +1,38 @@
+li{
+    display: inline;
+}
+*{
+    text-align: center;
+}
+h3{
+    border: black 1px solid;
+}
+#start{
+    width: 50px;
+    padding: 5px;
+    border: green 2px solid;
+}
+#stop{
+    width: 50px;
+    padding: 5px;
+    border: red 2px solid;
+}
+section li{
+    border: #EDC302 solid 1px;
+    background-color: #EDC302;
+    padding: 10px;
+    border-radius: 25px;
+    margin: 15px;
+}
+p{
+    display: inline;
+    margin: 15px;
+}
+.p{
+    margin-top: 25px;
+}
+.pause{
+    width: 50px;
+    padding: 5px;
+    border: orange 2px solid;
+}
