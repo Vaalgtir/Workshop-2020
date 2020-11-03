@@ -80,6 +80,35 @@ class User
 		return $tmp;
 	}
 
+
+	static function hasActualTrajet($id)
+	{
+		$db = new Database();
+		$data = $db->queryOne('SELECT * FROM utilisateurs WHERE id = ?', array($id));
+		if ($data['actual_trajet_id'] == null)
+		{
+			return False;
+		}
+		return True;
+	}
+
+	static function resetTrajetByUtiId($uti_id)
+	{
+		$db = new Database();
+		$user = User::getUserById($uti_id);
+		
+		Trajet::deleteTrajetById($user->getActual_trajet_id());
+		User::updateActualTrajet($uti_id, null);
+
+	}
+
+	static function updateActualTrajet($uti_id, $trajet_id)
+	 {
+	 	$db = new Database();
+	 	$data = $db->executeSql('UPDATE utilisateurs SET `actual_trajet_id`=? WHERE id = ?', array($trajet_id, $uti_id));
+	 	
+	 }
+
 	static function getUserByEmail($email){
 		$db = new Database();
 		$data = $db->queryOne('SELECT * FROM utilisateurs WHERE email = ?', array($email));

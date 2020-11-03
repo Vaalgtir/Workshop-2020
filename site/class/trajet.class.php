@@ -110,14 +110,26 @@
 		{
 			$db = new Database();
 			$data = $db->executeSql('INSERT INTO trajets (uti_id, carburant_id, locomotion_id, type_trajet_id, origine, time_creation) VALUES (?, ?, ?, ?, ?, NOW())', array($uti_id, $carburant_id, $locomotion_id, $type_trajet_id, $origine));
+			User::updateActualTrajet($data, $uti_id);
 			return $data;
 		}
 
 
+		static function deleteTrajetById($trajet_id)
+		{
+			$db = new Database();
+			$db->executeSql('DELETE FROM trajets WHERE id = ?', array($trajet_id));
+
+
+		}
+
 		static function endTrajet($trajet_id, $destination, $total_co2, $total_km)
 		{
 			$db = new Database();
+
 			$data = $db->executeSql('UPDATE trajets set `total_co2` = ?, `total_km` = ?, `destination` = ?, `time_end` = NOW() WHERE id = ?', array($total_co2, $total_km, $destination, $trajet_id));
+			$trajet = Trajet::getTrajetById($trajet_id);
+			User::updateActualTrajet($trajet->getUti_id(), null);
 		}
 
 		static function getTrajetById($trajets_id)
