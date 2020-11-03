@@ -1,6 +1,7 @@
 <?php
-	session_start();
 	include 'class/class.php';
+	session_start();
+	
 	if (isset($_SESSION['id']))
 	{
 		if (isset($_POST['action']))
