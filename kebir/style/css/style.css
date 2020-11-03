@@ -1,0 +1,1074 @@
+.nndvpContent {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+  }
+  
+  @keyframes toggleUpDown {
+    from {
+      transform: translateY(-5px);
+    }
+    to {
+      transform: translateY(5px);
+    }
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto sans", sans-serif;
+  }
+  
+  .animCross .line1 {
+    transform: rotate(-45deg) translateY(0.9rem);
+  }
+  
+  .animCross .line2 {
+    opacity: 0;
+  }
+  
+  .animCross .line3 {
+    transform: rotate(45deg) translateY(-0.9rem);
+  }
+  
+  .testButton {
+    cursor: pointer;
+    color: black;
+    background-color: #ffa100;
+    border-radius: 2rem;
+    border: solid 2px #ffa100;
+    transition: all 500ms;
+  }
+  .testButton:hover {
+    text-decoration: none;
+    color: #5990de;
+    background-color: white;
+    border: solid 2px #5990de;
+  }
+  
+  .submitButton {
+    cursor: pointer;
+    color: black;
+    background-color: #ffa100;
+    border-radius: 2rem;
+    border: solid 2px #ffa100;
+    transition: all 500ms;
+  }
+  .submitButton:hover {
+    text-decoration: none;
+    color: #5990de;
+    background-color: white;
+    border: solid 2px #5990de;
+  }
+  
+  .mapTestButton {
+    cursor: pointer;
+    color: black;
+    background-color: #ffa100;
+    border-radius: 2rem;
+    border: solid 2px #ffa100;
+    transition: all 500ms;
+  }
+  .mapTestButton:hover {
+    text-decoration: none;
+    color: #5990de;
+    background-color: white;
+    border: solid 2px #5990de;
+  }
+  
+  .suscriptionButton {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #FAFAFA;
+    background-color: #5990de;
+    border-radius: 2rem;
+    border: solid 2px #5990de;
+    transition: all 500ms;
+  }
+  .suscriptionButton:hover {
+    text-decoration: none;
+    color: #ffa100;
+    background-color: white;
+    border: solid 2px #ffa100;
+  }
+  
+  .commandeButton {
+    cursor: pointer;
+    color: black;
+    background-color: #ffa100;
+    border-radius: 2rem;
+    border: solid 2px #ffa100;
+    transition: all 500ms;
+    font-size: 1.2rem;
+  }
+  .commandeButton:hover {
+    text-decoration: none;
+    color: #5990de;
+    background-color: white;
+    border: solid 2px #5990de;
+  }
+  
+  .borderBottom {
+    border-bottom: 2px solid #5990de;
+  }
+  
+  .chevron {
+    height: 50px;
+  }
+  .chevron div {
+    height: 2px;
+    width: 30px;
+  }
+  
+  .containerPopup {
+    position: fixed;
+    z-index: 6;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .containerPopup i {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    cursor: pointer;
+    transition: color 400ms;
+  }
+  .containerPopup i:hover {
+    color: #5990de;
+  }
+  .containerPopup .wrapperPopup {
+    text-align: center;
+    position: fixed;
+    background-color: white;
+    border-radius: 0.5rem;
+  }
+  .containerPopup .wrapperPopup .disclaimer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5rem;
+    background-color: #5990de;
+    font-size: 1.5rem;
+    color: white;
+    border-radius: 0.5rem 0.5rem 0 0;
+  
+  }
+  .containerPopup .wrapperPopup .wrapperInput .wrapperLabelContent label {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  .containerPopup .wrapperPopup .wrapperInput .wrapperLabelContent label span {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    transition: all 400ms ease-in-out;
+  }
+  .containerPopup .wrapperPopup .wrapperInput .wrapperLabelContent label .contentWritten {
+    transform: translateY(-2.2rem);
+    opacity: 0.8;
+  }
+  .containerPopup .wrapperPopup .wrapperButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .containerPopup .wrapperPopup .submitButton {
+    padding: 0.75vh 2rem;
+  }
+  
+  body {
+    background-color: #FAFAFA;
+  }
+  
+  .navbar {
+    padding: 0rem;
+    text-align: center;
+    background-color: white;
+  }
+  .navbar > div {
+    max-height: 100%;
+  }
+  .navbar .wrapperBurger {
+    display: none;
+  }
+  .navbar .dropidown-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: left;
+    position: absolute;
+    top: 8.5vh;
+    left: 0;
+    right: 0;
+    height: 20vh;
+    background-color: white;
+  }
+  .navbar .dropidown-menu li {
+    padding-left: 15rem;
+  }
+  .navbar .dropidown-menu a {
+    text-decoration: none;
+    font-size: 1.25rem;
+    color: #585858;
+    transition: color 300ms;
+  }
+  .navbar .dropidown-menu a:hover {
+    color: #ffa100;
+    text-decoration: none;
+  }
+  .navbar__item {
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #585858;
+    transition: color 300ms;
+  }
+  .navbar__item:hover {
+    text-decoration: none;
+    color: #5990de;
+  }
+  .navbar__item--onPage {
+    text-decoration: none;
+    color: #5990de;
+  }
+  .navbar .testButton {
+    text-decoration: none;
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0.5vh 2rem;
+  }
+  
+  header {
+    background-image: url(/sitePapa/image/en-tete.jpg);
+    background-position: cover;
+    background-position: top;
+    text-align: center;
+    color: #616161;
+    height: 355px;
+  }
+  header h1 {
+    font-size: 2.5rem;
+    font-weight: 100;
+    color: black;
+    margin: 2rem 0;
+    font-family: "Montserrat", sans-serif;
+  }
+  header div {
+    padding: 1rem 0;
+  }
+  
+  main .title {
+    color: #FFCA28;
+    text-align: center;
+    border-bottom: solid #FFCA28 1px;
+    margin: 1rem 10% 2rem 10%;
+  }
+  main .title h1 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 100;
+  }
+  main .title .chevron {
+    padding-top: 1rem;
+    cursor: pointer;
+  }
+  main .title .chevron:hover {
+    animation: toggleUpDown 400ms ease-in-out infinite alternate;
+  
+  }
+  main .wrapperContent .wrapperDiagramme div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  main .wrapperContent .wrapperDiagramme div h1 {
+    font-weight: 400;
+    padding: 0.5rem;
+  }
+  main .wrapperContent .wrapperDiagramme div h1 span {
+    color: #ffa100;
+  }
+  main .wrapperContent .wrapperDiagramme div canvas {
+    width: 100%;
+    margin-bottom: 2rem;
+  
+  }
+  main .wrapperContent .line img {
+    max-width: 100%;
+    box-shadow: 0.4rem 0.3rem 0.4rem 0rem #BDBDBD;
+  }
+  main .wrapperContent .line .borderFade {
+    box-shadow: none;
+  }
+  main .wrapperContent .line div h2 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 100;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  main .wrapperContent .line div p {
+    color: #585858;
+    margin: 1rem 0 1rem 1rem;
+  }
+  main .wrapperContent .line div p a {
+    font-size: 0.95rem;
+  }
+  main .wrapperContent .line2 {
+    row-gap: 2rem;
+    align-items: flex-start;
+  }
+  main .wrapperContent .line2 h2 {
+    margin-top: 1rem;
+  }
+  main .wrapperContent .line2:hover .contactSheet {
+    height: 681px;
+  }
+  main .wrapperContent .line:first-child .img__line1 {
+    box-shadow: none;
+  }
+  main .wrapperContent .dropdownArticle {
+    display: none;
+    padding: 0 20% 3rem 20%;
+    opacity: 0;
+  }
+  main .wrapperContent .dropdownArticleButton {
+    cursor: pointer;
+    color: #5990de;
+    transition: all 400ms;
+    text-align: center;
+  }
+  main .wrapperContent .dropdownArticleButton i {
+    color: #5990de;
+    transition: all 400ms;
+    transform: translateY(0px);
+  }
+  main .wrapperContent .dropdownArticleButton:hover {
+    color: #ffa100;
+    text-decoration: none;
+  }
+  main .wrapperContent .dropdownArticleButton:hover i {
+    color: #ffa100;
+    transform: translateY(2px);
+  }
+  main .wrapperContent .down i {
+    transform: rotate(180deg);
+  }
+  main .wrapperContent .down:hover i {
+    transform: rotate(180deg);
+  }
+  main .wrapperContent .contactSheet {
+    background-image: url("../../image/leFichier__content/formulaire_contact.jpg");
+    width: 443px;
+    height: 336px;
+    transition: height 500ms;
+    box-shadow: 0.2rem 0.2rem 0.4rem 0rem #BDBDBD;
+  }
+  main .wrapperOffre {
+    color: #585858;
+    text-align: center;
+    display: grid;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  main .wrapperOffre h1 {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    font-size: 1.77rem;
+  }
+  main .wrapperOffre h2 {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    font-size: 1.77rem;
+  }
+  main .wrapperOffre .suscriptionButton {
+    margin: 2rem 0;
+  }
+  main .wrapperOffre p {
+    padding: 0.5rem 0;
+  }
+  main .wrapperOffre .offreSaas {
+    background-color: #5990de;
+    color: #FAFAFA;
+    border-radius: 0.5rem;
+  }
+  main .wrapperOffre .offreSaas .suscriptionButton {
+    background-color: #ffa100;
+  }
+  main .wrapperOffre .offreSaas .suscriptionButton:hover {
+    background-color: white;
+  }
+  main .wrapperOffre .offreSaas, main .wrapperOffre .offreCloud, main .wrapperOffre .offreLocal {
+    padding: 0 1rem 7rem 1rem;
+  }
+  main .labelTab {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-decoration: underline;
+    padding: 2rem 0;
+  }
+  main .wrapperTab {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12rem;
+  }
+  main .wrapperTab .tableOffre {
+    border-collapse: collapse;
+  }
+  main .wrapperTab .tableOffre thead {
+    font-size: 1.3rem;
+    text-align: center;
+    color: #5990de;
+  }
+  main .wrapperTab .tableOffre thead tr {
+    border-bottom: #BDBDBD 1px solid;
+  }
+  main .wrapperTab .tableOffre thead th {
+    padding: 1rem 2rem;
+  }
+  main .wrapperTab .tableOffre thead th:last-child {
+    color: #FFCA28;
+  }
+  main .wrapperTab .tableOffre tbody {
+    color: #585858;
+    text-align: center;
+  }
+  main .wrapperTab .tableOffre tbody tr {
+    border-bottom: #EEEEEE 1px solid;
+  }
+  main .wrapperTab .tableOffre tbody tr th {
+    text-align: left;
+    padding: 1rem 2rem;
+  }
+  main .wrapperTab .tableOffre tbody tr td {
+    color: #E0E0E0;
+    cursor: pointer;
+  }
+  main .wrapperTab .tableOffre tbody tr td i {
+    transition: all 400ms;
+  }
+  main .wrapperTab .tableOffre tbody tr .active {
+    color: #43A047;
+  }
+  main .wrapperTab .tableOffre tbody tr .newActive {
+    color: #ffa100;
+  }
+  main .wrapperTab .tableOffre tbody tr .newInactive {
+    color: #C8E6C9;
+  }
+  main .wrapperTab .tableOffre tbody tr:last-child td:last-child {
+    cursor: default;
+  }
+  main .wrapperTab .tableOffre tbody .avderline, main .wrapperTab .tableOffre tbody .avderline + tr {
+    border-bottom: none;
+  }
+  main .wrapperTab .tableOffre tbody .commandeButton {
+    margin: 2rem 1rem;
+    padding: 0.5rem 2rem;
+  }
+  main .wrapperTab .tableOffre tbody .action {
+    display: flex;
+    justify-content: space-between;
+  }
+  main .wrapperTab .tableOffre tbody .action .viewAll {
+    color: #5990de;
+    cursor: pointer;
+    transition: color 400ms;
+    border: none;
+  }
+  main .wrapperTab .tableOffre tbody .action .viewAll:hover {
+    color: #FFCA28;
+    border: none;
+  }
+  main .wrapperTab .tableOffre tbody .inactive {
+    color: #616161;
+    background-color: #FAFAFA;
+    cursor: default;
+    border: #616161 solid 2px;
+  }
+  main .wrapperTab .tableOffre tbody .inactive:hover {
+    color: #616161;
+    background-color: #FAFAFA;
+    border: #616161 solid 2px;
+  }
+  
+  .banner .wrapperTestLink {
+    background-color: #90CAF9;
+    display: grid;
+    margin-top: 5rem;
+    text-align: center;
+    padding: 2rem 2rem;
+    align-items: center;
+  }
+  .banner .wrapperTestLink p {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: "Montserrat", sans-serif;
+  }
+  .banner .wrapperTestLink .or {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .banner .wrapperTestLink .mapTestButton {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    color: #424242;
+  }
+  .banner .wrapperTestLink .mapTestButton:hover {
+    text-decoration: none;
+    color: #5990de;
+    background-color: white;
+    border: solid 2px #5990de;
+  }
+  .banner .wrapperTestLink .testButton {
+    color: #424242;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+  }
+  .banner .wrapperTestLink .testButton:hover {
+    text-decoration: none;
+    color: #5990de;
+    background-color: white;
+    border: solid 2px #5990de;
+  }
+  
+  .footer {
+    color: white;
+    bottom: 0;
+    background-color: #212121;
+    display: grid;
+    align-items: center;
+    padding-top: 2rem;
+  }
+  .footer .containerLegal h1 {
+    margin: 0 0 1rem 0.75rem;
+    color: white;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+  .footer .containerLegal .wrapperLink {
+    margin: 1rem 0;
+    display: grid;
+  }
+  .footer .containerLegal .wrapperLink a:first-child + a {
+    grid-row: 2/3;
+  }
+  .footer .containerLegal .wrapperLink a {
+    text-decoration: none;
+    color: #E0E0E0;
+    border-bottom: solid 1px #BDBDBD;
+    padding: 0.2rem;
+    transition: all 300ms;
+    font-size: 0.8rem;
+  }
+  .footer .containerLegal .wrapperLink a:hover {
+    text-decoration: none;
+    color: #ffa100;
+  }
+  .footer .containerLegal .wrapperLink span {
+    display: flex;
+    align-items: center;
+    height: 8rem;
+    padding: 1rem 0.5rem;
+    border-bottom: solid 1px #BDBDBD;
+  }
+  .footer .containerLegal .wrapperLink span img {
+    max-height: 100%;
+  }
+  .footer .containerNousContacter h1 {
+    margin: 0 0 1rem 0.75rem;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+  .footer .containerNousContacter h2 {
+    font-weight: 400;
+    font-size: 0.9rem;
+  }
+  .footer .containerNousContacter p {
+    font-size: 0.9rem;
+    margin: 1rem 0;
+  }
+  .footer .containerNousContacter i {
+    margin-right: 0.75rem;
+  }
+  .footer .containerNousContacter a {
+    text-decoration: none;
+    color: #E0E0E0;
+    padding: 0.5rem 1rem 1rem 0;
+    transition: all 300ms;
+  }
+  .footer .containerNousContacter a:hover {
+    text-decoration: none;
+    color: #5990de;
+  }
+  
+  @media screen and (min-width: 1200px) {
+    .containerPopup .wrapperPopup {
+      width: 30%;
+      height: 69vh;
+    }
+    .containerPopup .wrapperPopup .wrapperInput {
+      gap: 1rem;
+      margin: 1.5rem 3rem;
+    }
+  
+    .navbar {
+      grid-template-rows: 8.5vh;
+      height: 8.5vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr 2fr;
+    }
+    .navbar .wrapperLink {
+      grid-column: 3/4;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .navbar .wrapperDropidown {
+      grid-column: 2/3;
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    .navbar__item {
+      max-height: 100%;
+      padding-top: 2.8vh;
+    }
+    .navbar__item:hover {
+      border-bottom: 2px solid #5990de;
+    }
+    .navbar .dropidown-button {
+      display: grid;
+    }
+    .navbar .testButton {
+      margin: 2vh 3rem 0 0;
+    }
+  
+    header {
+      padding: 1rem 2rem 1rem 40%;
+      font-size: 1.2rem;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    header h1 {
+      grid-column: 1/5;
+    }
+    header > div {
+      grid-row: 2/3;
+      grid-column: 2/4;
+    }
+    header > div + div {
+      grid-row: 3/4;
+      grid-column: 1/3;
+    }
+    header > div + div + div {
+      grid-row: 4/5;
+      grid-column: 3/5;
+    }
+  
+    main .title h1 {
+      font-size: 3rem;
+    }
+    main .wrapperContent .line {
+      margin: 0 20% 2rem 20%;
+      padding-top: 4rem;
+      grid-template-columns: repeat(8, 1fr);
+    }
+    main .wrapperContent .line--leFichier {
+      margin: 0 15% 2rem 15%;
+    }
+    main .wrapperContent .wrapperDiagramme {
+      grid-template-columns: 1fr 1fr;
+      margin: 4rem 20% 5rem 20%;
+    }
+    main .wrapperContent .img__line1 {
+      grid-column: 1/5;
+    }
+    main .wrapperContent .img__line1--leFichier {
+      grid-column: 5/9;
+    }
+    main .wrapperContent .content__line1 {
+      grid-column: 5/8;
+    }
+    main .wrapperContent .content__line1--leFichier {
+      grid-column: 1/5;
+      grid-row: 1/2;
+    }
+    main .wrapperContent .dropdownArticle--line1 {
+      grid-column: 1/9;
+    }
+    main .wrapperContent .img__line2 {
+      grid-column: 5/9;
+    }
+    main .wrapperContent .img__line2--leFichier {
+      grid-column: 1/2;
+    }
+    main .wrapperContent .content__line2 {
+      grid-column: 1/5;
+    }
+    main .wrapperContent .content__line2--leFichier {
+      grid-column: 2/9;
+    }
+    main .wrapperContent .img__line3 {
+      grid-column: 1/4;
+    }
+    main .wrapperContent .img__line3--leFichier {
+      grid-column: 5/9;
+    }
+    main .wrapperContent .content__line3 {
+      grid-column: 5/9;
+    }
+    main .wrapperContent .content__line3--leFichier {
+      grid-column: 1/5;
+    }
+    main .wrapperContent .img__line4 {
+      grid-column: 5/9;
+    }
+    main .wrapperContent .content__line4 {
+      grid-column: 1/5;
+    }
+    main .wrapperOffre {
+      gap: 1rem;
+      grid-template-columns: repeat(3, 1fr);
+      margin: 20vh 25% 30vh 25%;
+    }
+    main .wrapperOffre .offreCloud, main .wrapperOffre .offreLocal {
+      margin-top: 2rem;
+    }
+    main .wrapperOffre h1 {
+      display: none;
+    }
+    main .wrapperOffre h2 {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    }
+  
+    .banner .wrapperTestLink {
+      gap: 1rem;
+      grid-template-columns: 3fr 1fr 3fr;
+    }
+    .banner .wrapperTestLink .testFichier__button {
+      margin: 1rem auto;
+      grid-row: 2/3;
+    }
+    .banner .wrapperTestLink .testLogiciel__button {
+      margin: 1rem auto;
+      grid-row: 2/3;
+      grid-column: 3/4;
+    }
+  
+    .footer {
+      grid-template-columns: repeat(5, 1fr);
+      text-align: left;
+    }
+    .footer .containerLegal {
+      grid-column: 2/3;
+    }
+    .footer .containerNousContacter {
+      grid-column: 4/5;
+    }
+  }
+  @media screen and (min-width: 750px) and (max-width: 1200px) {
+    .containerPopup .wrapperPopup {
+      width: 75%;
+      height: 75vh;
+    }
+    .containerPopup .wrapperPopup .wrapperInput {
+      gap: 1rem;
+      margin: 1.5rem 3rem;
+    }
+  
+    .navbar {
+      grid-template-rows: 8.5vh;
+      height: 8.5vh;
+      display: grid;
+      grid-template-columns: 2fr 4fr;
+    }
+    .navbar .wrapperLink {
+      grid-column: 2/3;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .navbar .wrapperDropidown {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .navbar__item {
+      max-height: 100%;
+      padding-top: 2.8vh;
+    }
+    .navbar__item:hover {
+      border-bottom: 2px solid #5990de;
+    }
+    .navbar .dropidown-button {
+      display: grid;
+    }
+    .navbar .testButton {
+      margin: 2vh 0.5rem 0 0;
+    }
+  
+    header {
+      margin-top: 0.5rem;
+      padding: 1rem 1rem 2rem 1rem;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    header h1 {
+      grid-column: 1/5;
+      font-size: 2.4rem;
+    }
+    header > div {
+      grid-row: 2/3;
+      grid-column: 2/4;
+    }
+    header > div + div {
+      grid-row: 3/4;
+      grid-column: 1/3;
+    }
+    header > div + div + div {
+      grid-row: 4/5;
+      grid-column: 3/5;
+    }
+  
+    main .title h1 {
+      font-size: 2rem;
+    }
+    main .wrapperContent .line {
+      margin: 0 20% 2rem 17%;
+      padding-top: 4rem;
+      grid-template-columns: 1fr;
+    }
+    main .wrapperContent .img__line1, main .wrapperContent .img__line1--leFichier, main .wrapperContent .img__line2, main .wrapperContent .img__line2--leFichier, main .wrapperContent .img__line3, main .wrapperContent .img__line3--leFichier, main .wrapperContent .img__line4 {
+      display: none;
+    }
+    main .wrapperContent .wrapperDiagramme {
+      grid-template-columns: 1fr 1fr;
+      margin: 4rem 15% 5rem 15%;
+    }
+    main .wrapperOffre {
+      gap: 1rem;
+      grid-template-columns: repeat(3, 1fr);
+      margin: 20vh 15% 30vh 15%;
+    }
+    main .wrapperOffre .offreCloud, main .wrapperOffre .offreLocal {
+      margin-top: 2rem;
+    }
+    main .wrapperOffre h1 {
+      display: none;
+    }
+    main .wrapperOffre h2 {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    }
+    main .wrapperTab {
+      overflow: scroll;
+    }
+    main .wrapperTab .tableOffre {
+      width: 100%;
+    }
+  
+    .banner .wrapperTestLink {
+      gap: 1.5rem;
+      grid-template-columns: 1fr;
+    }
+    .banner .wrapperTestLink .testFichier__button {
+      margin: 2rem auto;
+    }
+    .banner .wrapperTestLink .testLogiciel__button {
+      margin: 2rem auto;
+    }
+  
+    .footer {
+      grid-template-columns: repeat(5, 1fr);
+      text-align: left;
+    }
+    .footer .containerLegal {
+      grid-column: 2/3;
+    }
+    .footer .containerNousContacter {
+      grid-column: 4/5;
+    }
+  }
+  @media screen and (max-width: 750px) {
+    .containerPopup .wrapperPopup {
+      width: 90%;
+      height: 90vh;
+    }
+    .containerPopup .wrapperPopup .wrapperInput {
+      gap: 0.5rem;
+      margin: 1.5rem 3rem;
+    }
+  
+    .navbar {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      grid-template-rows: 12vh;
+      height: 12vh;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      z-index: 5;
+    }
+    .navbar .logo {
+      height: 100%;
+      grid-column: 1/4;
+    }
+    .navbar .logo img {
+      height: 100%;
+    }
+    .navbar .wrapperBurger {
+      justify-self: center;
+      display: block;
+      padding: 1.4rem 0;
+    }
+    .navbar .wrapperBurger div {
+      background-color: black;
+      width: 2rem;
+      height: 0.15rem;
+      margin: 0.5rem;
+      transition: all 400ms ease;
+    }
+    .navbar .wrapperLink {
+      grid-column: 1/5;
+      display: grid;
+      background-color: rgba(255, 255, 255, 0.9);
+      height: 68vh;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 20vh;
+    }
+    .navbar .wrapperDropidown {
+      grid-row: 1/3;
+      display: grid;
+      height: 100%;
+      align-items: center;
+    }
+    .navbar .dropidown-button {
+      height: 100%;
+    }
+    .navbar .dropidown-button .dropidown-menu {
+      display: none;
+    }
+    .navbar__item {
+      padding-top: 2.5rem;
+      height: 65%;
+      border-bottom: 2px solid #98b1d4;
+    }
+  
+    header {
+      margin-top: 12vh;
+      padding: 1rem 1rem 10rem 1rem;
+      grid-template-columns: 1fr;
+      overflow: hidden;
+    }
+  
+    main .title h1 {
+      font-size: 2rem;
+    }
+    main .wrapperContent .line {
+      margin: 0 20% 2rem 17%;
+      padding-top: 4rem;
+      grid-template-columns: 1fr;
+    }
+    main .wrapperContent .img__line1, main .wrapperContent .img__line1--leFichier, main .wrapperContent .img__line2, main .wrapperContent .img__line2--leFichier, main .wrapperContent .img__line3, main .wrapperContent .img__line3--leFichier, main .wrapperContent .img__line4 {
+      display: none;
+    }
+    main .wrapperContent .wrapperDiagramme {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      margin: 4rem 10% 5rem 10%;
+    }
+    main .wrapperOffre {
+      gap: 1rem;
+      grid-template-columns: 1fr;
+      margin: 18vh 10% 15vh 10%;
+    }
+    main .wrapperOffre h1 {
+      margin-bottom: 2rem;
+    }
+    main .wrapperOffre h2 {
+      border-bottom: none;
+    }
+    main .wrapperOffre .offreSaas {
+      grid-row: 2/3;
+      padding-top: 2rem;
+    }
+    main .wrapperOffre .offreCloud, main .wrapperOffre .offreLocal {
+      border: solid 1px #BDBDBD;
+      border-radius: 1rem;
+      padding-top: 2rem;
+      margin-top: 7rem;
+    }
+    main .wrapperTab {
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+      font-size: 0.8rem;
+      background-color: white;
+    }
+    main .wrapperTab .tableOffre {
+      min-width: 980px;
+      margin: 0 auto;
+    }
+    main .wrapperTab .tableOffre tbody tr th {
+      padding: 1rem 0 1rem 1rem;
+    }
+  
+    .banner .wrapperTestLink {
+      gap: 1.5rem;
+      grid-template-columns: 1fr;
+    }
+    .banner .wrapperTestLink .testFichier__button {
+      margin: 2rem auto;
+    }
+    .banner .wrapperTestLink .testLogiciel__button {
+      margin: 2rem auto;
+    }
+  
+    .footer {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      text-align: center;
+    }
+    .footer .containerNousContacter {
+      grid-row: 1/2;
+    }
+    .footer .containerLegal .wrapperLink {
+      justify-content: center;
+    }
+  }
+  @media screen and (max-height: 500px) {
+    .navbar .wrapperBurger {
+      padding: 0;
+    }
+  }
+  @media screen and (max-height: 620px) {
+    .containerPopup .wrapperPopup {
+      height: 98vh;
+    }
+  }
+  @media screen and (min-width: 1200px) and (max-width: 1400px) {
+    .containerPopup .wrapperPopup {
+      width: 60%;
+    }
+  }
+  
+  /*# sourceMappingURL=style.css.map */
+  
