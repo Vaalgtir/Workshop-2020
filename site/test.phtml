@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+
+    <link rel="stylesheet" href="style/css/style.css">
+    <link rel="stylesheet" type="text/css" href="fontawesome/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Outil CRM Définition : Prospection commerciale et de suivi</title>
+</head>
+<body>
+	<button id="newgroupe">new groupe</button>
+	<button id="newUsertoGroupe">add user 8 to group 6</button>
+	<?php foreach($user->getGroupe() as $groupe): ?>
+		<button type="text" name="" ><?= $groupe->getId()?></button>
+
+	<?php endforeach; ?>
+
+    <button id="newTrajet">new Trajet</button>
+    <button id="endTrajet">end Trajet</button>
+    <button id="resetTrajet">reset Trajet</button>
+
+</body>
+<script src="js/jquery-1.12.0.min.js"></script>
+    
+<script src="js/script.js"></script>
+ <script>
+        $(function(){
+        	$('#newgroupe').click(function(){
+        		$.ajax({
+        		    method: "POST",
+        		    url: "groupe.php",
+        		    data:{
+        		        action: "newgroupe",
+        		        nom: "LES CARIBOUX"
+        		        
+        		    }
+        		}).done(function(data){
+        		    //data = "OK" ou "bad password"
+        		    if (data == "OK")
+        		    {
+        		        window.location.href = "test.php";
+        		    }
+        		});
+        	});
+        	$('#newUsertoGroupe').click(function(){
+        		$.ajax({
+        		    method: "POST",
+        		    url: "groupe.php",
+        		    data:{
+        		        action: "newuser",
+        		        groupe_id: 5,
+        		        uti_id: 8  
+        		    }
+        		}).done(function(data){
+        		    //data = "OK" ou "bad password"
+        		    if (data == "OK")
+        		    {
+        		        window.location.href = "test.php";
+        		    }
+        		});
+        	});
+            $('#newTrajet').click(function(){
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const origin = {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude,
+                    
+                        };
+                        console.log(origin);
+                        $.ajax({
+                            method: "POST",
+                            url: "trajet.php",
+                            data:{
+                                action: "new",
+                                carburant_id: 1,
+                                locomotion_id: 2,
+                                type_trajet_id: 1,
+                                origine: origin.lat + "," + origin.lng
+                            }
+                        }).done(function(data){
+                            //data = "OK" ou "bad password"
+                            if (data == "OK")
+                            {
+                                window.location.href = "test.php";
+                            }
+                        });
+                    }
+                )};
+                
+            });
+
+            $('#endTrajet').click(function(){
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const destination = {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude,
+                    
+                        };
+                        console.log(destination);
+                        $.ajax({
+                            method: "POST",
+                            url: "trajet.php",
+                            data:{
+                                action: "end",
+                                destination: destination.lat + "," + destination.lng,
+                                total_km: 5
+                            }
+                        }).done(function(data){
+                            //data = "OK" ou "bad password"
+                            if (data == "OK")
+                            {
+                                window.location.href = "test.php";
+                            }
+                        });
+                    }
+                )};
+                
+            });
+            $('#resetTrajet').click(function(){
+                $.ajax({
+                    method: "POST",
+                    url: "trajet.php",
+                    data:{
+                        action: "reset"
+                    }
+                }).done(function(data){
+                    //data = "OK" ou "bad password"
+                    if (data == "OK")
+                    {
+                        window.location.href = "test.php";
+                    }
+                });
+            })
+
+
+        });
+
+
+
+
+
+
+    </script>
+</html>
