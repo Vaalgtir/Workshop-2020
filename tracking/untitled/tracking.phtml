@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Tracking Session</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.19.0.min.js"> </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+</head>
+<body>
+
+<section>
+    <h3> Session Tracking</h3>
+    <ul>
+        <li>Bus</li>
+        <li>Voiture</li>
+        <li>Moto/Scooter</li>
+    </ul>
+    <button id="start" onclick="start()">Start</button>
+    <button id="pause" onclick="stop()">Pause</button>
+    <button id="stop" onclick="reset()">Stop</button>
+    <br>
+    <p class="p">Distance: 0km</p>
+    <div class="tim">
+        <p>Durée: </p>
+        <span >0 h</span> :
+        <span >0 min</span> :
+        <span >0 s</span> :
+        <span >0 ms</span>
+        <script type="text/javascript" src="timer.js"></script>
+    </div>
+    <br>
+    <p class="p">Empreinte carbone : </p>
+    <div class="container">
+        <script>
+            window.lat = 37.7850;
+            window.lng = -122.4383;
+            function getLocation () {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition (updatePosition);
+                }
+                return null;
+            };
+            function updatePosition (position) {
+                if (position) {
+                    window.lat = position.coords.latitude;
+                    window.lng = position.coords.longitude;
+                }
+            }
+            setInterval (function () {updatePosition (getLocation ())}, 10000);
+            function currentLocation () {
+                return {lat: window.lat, lng: window.lng};
+            };
+            let map;
+            let mark;
+            initialize = function() {
+                map  = new google.maps.Map(document.getElementById('map-e'), {center:{lat:lat,lng:lng},zoom:12});
+                mark = new google.maps.Marker({position:{lat:lat, lng:lng}, map:map});
+            };
+            window.initialize = initialize;
+            let redraw = function(payload) {
+                lat = payload.message.lat;
+                lng = payload.message.lng;
+                map.setCenter({lat:lat, lng:lng, alt:0});
+                mark.setPosition({lat:lat, lng:lng, alt:0});
+            };
+            pnChannel = "map-channel";
+            pubnub = new PubNub({
+                publishKey:   'pub-c-d3125050-83a8-401f-a1b6-41f711c586db',
+                subscribeKey: 'sub-c-e6d3ec84-1d10-11eb-9f1e-baa67f46029c'
+            });
+            pubnub.subscribe({channels: [pnChannel]});
+            pubnub.addListener({message:redraw});
+            setInterval(function() {
+                pubnub.publish({channel:pnChannel, message:currentLocation()});
+            }, 5000);
+
+        </script>
+        <div id="map-e" style="height: 400px">
+            <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDHA8Rq3U_h4_wke9168VGCx7GP2LXURoA&callback=initialize" > </script>
+        </div>
+    </div>
+
+</section>
+</body>
+</html>
