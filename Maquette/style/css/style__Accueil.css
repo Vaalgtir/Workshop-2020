@@ -1,0 +1,190 @@
+@charset "UTF-8";
+.nndvpContent {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto sans", sans-serif;
+}
+
+.testButton {
+  text-align: center;
+  cursor: pointer;
+  color: black;
+  background-color: #ffa100;
+  border-radius: 2rem;
+  border: solid 2px #ffa100;
+  transition: all 500ms;
+}
+
+.testButton:hover {
+  text-decoration: none;
+  color: #5990de;
+  background-color: white;
+  border: solid 2px #5990de;
+}
+
+body {
+  background-color: #FAFAFA;
+  color: #616161;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem 1rem 1rem;
+  background-color: white;
+  height: 7vh;
+  margin-bottom: 3rem;
+}
+nav .wrapperIcon {
+    display: flex;
+    align-items: center;
+}
+nav .wrapperIcon a {
+    text-decoration: none;
+    color: #616161;
+}
+nav .wrapperIcon .button__help {
+    transition: all 500ms;
+}
+nav .wrapperIcon .button__help:hover {
+    color: #62FA7D;
+    cursor: pointer;
+  }
+nav .wrapperIcon .button__logout {
+    margin-left: 2rem;
+    color: #4DE3AA;
+    transition: all 500ms;
+}
+nav .button__logout:hover {
+  color: #62FA7D;
+  cursor: pointer;
+}
+nav h1 {
+  font-weight: 500;
+  font-size: 2rem;
+  font-family: "Anton", sans-serif;
+}
+nav .logo {
+  height: 100%;
+}
+nav .logo img {
+  margin-left: 3rem;
+  height: 100%;
+}
+
+section {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  margin-bottom: 0;
+}
+section .col__stat {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+section .col__stat .date {
+  grid-column: 1/3;
+  padding: 3rem 0 3rem 0;
+  font-weight: 800;
+  font-size: 2.3rem;
+}
+section .trajet {
+  margin: 7rem 1rem 1rem 1rem;
+  grid-row: 3/4;
+}
+section .trajet__motor {
+  color: #D90B1B;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+section .trajet__motor h1 {
+  color: #F01B00;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+section .trajet__doux {
+  margin-bottom: 7rem;
+  margin-top: 7rem;
+  color: #62FA7D;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+section .trajet__doux h1 {
+  color: #4DE3AA;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+section .mesure {
+  margin-top: 3.2rem;
+  margin-bottom: 2rem;
+  align-self: center;
+  font-size: 1.5rem;
+}
+section .mesure__empreinteC {
+  text-align: start;
+}
+section .mesure__scoreC {
+  text-align: end;
+}
+section .col__friend {
+  transition: all 500ms;
+  padding: 1rem 0 0 1rem;
+  border-radius: 0.5rem;
+  border-style: solid 1px #616161;
+  margin-right: 7rem;
+}
+section .col__friend:hover {
+  transform: scale(1.05) translateX(5%) translateY(5%);
+  background-color: #e4e4e4;
+}
+section .col__friend div {
+  justify-content: space-around;
+  display: flex;
+  font-size: 1.2rem;
+}
+section .col__friend div i {
+  margin: 0 1rem 0 0;
+  transition: all 500ms;
+}
+section .col__friend div i:hover {
+  cursor: pointer;
+  color: #1a941c;
+}
+section .col__friend .friend__list {
+  display: block;
+}
+section .col__friend .friend__list ul {
+  list-style: none;
+  padding-top: 2rem;
+}
+section .col__friend .friend__list ul li {
+  cursor: pointer;
+  transition: all 500ms;
+}
+section .col__friend .friend__list ul li:hover {
+  color: #1a941c;
+}
+section .col__défi {
+  text-align: center;
+  padding: 1rem 1rem 0 1rem;
+  border-radius: 0.5rem;
+  margin: 15rem 0 15rem 4rem;
+  padding-top: 10%;
+  align-items: center;
+  transition: all 500ms;
+}
+section .col__défi:hover {
+  transform: scale(1.05) translateX(-5%) translateY(5%);
+  background-color: #e4e4e4;
+}
+
+/*# sourceMappingURL=style.css.map */
