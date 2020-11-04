@@ -1,0 +1,69 @@
+recupere toutes les données en json(carburant, moyen_locomotion, type_trajets) =>{
+    url:"data.php",
+    data:{
+        action: "allData"
+    }
+} 
+     
+recupere tout les groupes avec la liste des users dans ce groupe en json => 
+{
+    url:"data.php",
+    data:{
+        action: "allGroupe"
+    }
+}
+
+
+nouveau groupe avec un nom return 200=ok, 403=pas connecter, 404= probleme donnée => 
+{
+    url:"groupe.php",
+    data:{
+        action: "newGroupe"
+        nom: NOM_DU_GROUPE
+    }
+}
+
+nouveau groupe avec un nom  return 200=ok, 403=pas connecter, 404= probleme donnée=> 
+{
+    url:"groupe.php",
+    data:{
+        action: "newUser"
+        uti_id: ID_UTILISATEUR_A_AJOUTER
+        groupe_id: ID_DU_GROUPE
+    }
+}
+
+
+nouveau trajet return 200=ok, 403=pas connecter, 404= probleme donnée=>
+{
+    url:"trajet.php",
+    data:{
+        action: "new"
+        carburant_id: ID_CARBURANT
+        locomotion_id: ID_MOYEN_LOCOMOTION
+        type_trajets_id: ID_TYPE_TRAJETS
+        origine: ORIGINE_LATITUDE + ',' + ORIGINE_LONGITUDE
+    }
+}
+
+find du trajet return 200=ok, 403=pas connecter, 404= probleme donnée=>
+{
+    url:"trajet.php",
+    data:{
+        action: "end"
+        destination: DESTINATION_LATITUDE + ',' + DESTINATION_LONGITUDE
+        total_km: TOTAL_KM
+    }
+}
+
+reset trajet return 200=ok, 403=pas connecter, 404= probleme donnée =>
+{
+    url:"trajet.php",
+    data:{
+        action: "reset"
+    }
+}
+
+
+
+
