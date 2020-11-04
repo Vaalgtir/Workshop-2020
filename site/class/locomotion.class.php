@@ -85,7 +85,6 @@
 		{
 			$db = new Database();
 			$data = $db->queryOne('SELECT carburants.nom AS carburant, type_trajets.type AS type_trajets, moyen_locomotion.type AS locomotion, locomotion_carburant.id, carburant_id, locomotion_id, type_trajets_id FROM locomotion_carburant INNER JOIN carburants ON locomotion_carburant.carburant_id  = carburants.id INNER JOIN moyen_locomotion ON locomotion_carburant.locomotion_id = moyen_locomotion.id INNER JOIN type_trajets ON locomotion_carburant.type_trajets_id = type_trajets.id WHERE carburant_id = ? AND locomotion_id = ? AND type_trajets_id = ?', array($carburant_id, $locomotion_id, $type_trajets_id));
-			var_dump($data);
 			$tmp = new Locomotion();
 			$tmp->hydrate($data);
 

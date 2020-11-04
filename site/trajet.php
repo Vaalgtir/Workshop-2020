@@ -8,9 +8,9 @@
 		{
 			if ($_POST['action'] == "new")
 			{
-				if (isset($_POST['carburant_id']) && isset($_POST['locomotion_id']) && isset($_POST['type_trajet_id'])&& isset($_POST['origine']))
+				if (isset($_POST['carburant_id']) && isset($_POST['locomotion_id']) && isset($_POST['type_trajets_id'])&& isset($_POST['origine']))
 				{
-					$id_trajet = Trajet::startNewTrajet($_SESSION['id'], $_POST['carburant_id'], $_POST['locomotion_id'], $_POST['type_trajet_id'], $_POST['origine']);
+					$id_trajet = Trajet::startNewTrajet($_SESSION['id'], $_POST['carburant_id'], $_POST['locomotion_id'], $_POST['type_trajets_id'], $_POST['origine']);
 					$user = User::getUserById($_SESSION['id']);
 					User::updateActualTrajet($_SESSION['id'], $id_trajet);
 					http_response_code(200);
@@ -36,7 +36,8 @@
 				http_response_code(200);
 				return ;
 			}
-			http_response_code(404);
+			
 		}
+		http_response_code(404);
 	}
 	http_response_code(403);

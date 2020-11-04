@@ -6,7 +6,7 @@
 	{
 		if (isset($_POST['action']))
 		{
-			if ($_POST['action'] == "newuser")
+			if ($_POST['action'] == "newUser")
 			{
 				if (isset($_POST['uti_id']) && isset($_POST['groupe_id']))
 				{
@@ -15,7 +15,7 @@
 					return ;
 				}
 			}
-			elseif ($_POST['action'] == "newgroupe")
+			elseif ($_POST['action'] == "newGroupe")
 			{
 				if (isset($_POST['nom']))
 				{
@@ -30,5 +30,6 @@
 
 
 		}
+		http_response_code(404);
 	}
 	http_response_code(403);

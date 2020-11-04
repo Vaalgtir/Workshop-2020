@@ -4,8 +4,8 @@ class Groupe{
 
 	use hydrate;
 
-	private $id;
-	private $userList;
+	public $id;
+	public $userList;
 
 	public function getId(){
 		return $this->id;

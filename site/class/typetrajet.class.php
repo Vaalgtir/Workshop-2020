@@ -5,8 +5,8 @@
 	{
 		use Hydrate;
 
-		private $id;
-		private $type;
+		public $id;
+		public $type;
 
 		public function getId(){
 			return $this->id;

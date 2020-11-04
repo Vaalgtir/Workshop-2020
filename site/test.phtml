@@ -30,6 +30,24 @@
 <script src="js/script.js"></script>
  <script>
         $(function(){
+
+            $.ajax({
+                method: "POST",
+                url: "data.php",
+                data:{
+                    action: "allGroupe"  
+                }
+            }).done(function(data){
+                //data = "OK" ou "bad password"
+                
+                console.log(data);
+                
+                let res = JSON.parse(data);
+                console.log(res);
+                
+            });
+
+
         	$('#newgroupe').click(function(){
         		$.ajax({
         		    method: "POST",
