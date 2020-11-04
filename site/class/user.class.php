@@ -80,7 +80,21 @@ class User
 		return $tmp;
 	}
 
+	static function getAllUser()
+	{
+		$db = new Database();
+		$data = $db->queryOne('SELECT * FROM utilisateurs ');
+		$res = array();
+		foreach ($datas as $data)
+		{
+			$tmp = new User();
+			$tmp->hydrate($data);
+			$res[]  = $tmp;
+		}
 
+		return $res;
+	}
+	
 	static function hasActualTrajet($id)
 	{
 		$db = new Database();

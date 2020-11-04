@@ -1,15 +1,32 @@
-recupere toutes les données en json(carburant, moyen_locomotion, type_trajets) =>{
+recupere toutes les données en json(carburant, moyen_locomotion, type_trajets) erreur = 403 =>{
     url:"data.php",
     data:{
         action: "allData"
     }
 } 
      
-recupere tout les groupes avec la liste des users dans ce groupe en json => 
+recupere tout les groupes avec la liste des users dans ce groupe en json erreur = 403 => 
 {
     url:"data.php",
     data:{
         action: "allGroupe"
+    }
+}
+
+recupere l'user en fonction de son id  erreur = 403
+{
+    url:"data.php",
+    data:{
+        action: "getUser",
+	id: ID_USER
+    }
+}
+
+recupere tout les users  erreur = 403
+{
+    url:"data.php",
+    data:{
+        action: "getAllUser"
     }
 }
 
@@ -63,7 +80,5 @@ reset trajet return 200=ok, 403=pas connecter, 404= probleme donnée =>
         action: "reset"
     }
 }
-
-
 
 

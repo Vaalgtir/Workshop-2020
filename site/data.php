@@ -29,6 +29,7 @@
 				}
 				$res = json_encode(array("carburant" => $resCarburant, "moyen_locomotion" => $resLocomotion, "type_trajets" => $resTypeProjet));
 				echo $res;
+				return ;
 			}
 			elseif ($_POST['action'] == "allGroupe")
 			{
@@ -39,7 +40,46 @@
 					$resData[] = get_object_vars($data);
 				}
 				echo json_encode($resData);
+				return ;
 
+			}
+
+			elseif($_POST['action'] == "getUser")
+			{
+				if (isset($_POST['id']))
+				{
+					$user = User::getUserById($_SESSION['id']);
+					$resData = array(
+						"id"				=> $user->getId(),
+						"nom" 				=> $user->getNom(),
+						"prenom"			=> $user->getPrenom(),
+						"email" 			=> $user->getEmail(),
+						"actual_trajet_id" 	=> $user->getActual_trajet_id() 
+					);
+
+					echo json_encode($resData);
+					return ;
+				}
+				
+			}
+			elseif ($_POST['action'] == "allUser")
+			{
+				$users = User::getAllUser($_SESSION['id']);
+				$res = [];
+				foreach($users as $user)
+				{
+					$tmpData = array(
+						"id"				=> $user->getId(),
+						"nom" 				=> $user->getNom(),
+						"prenom"			=> $user->getPrenom(),
+						"email" 			=> $user->getEmail(),
+						"actual_trajet_id" 	=> $user->getActual_trajet_id()
+					);
+					$res[] = $tmpData;
+				}
+				echo json_encode($res);
+				return;
 			}
 		}
 	}
+	http_response_code(403);
