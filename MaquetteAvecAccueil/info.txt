@@ -1,0 +1,6 @@
+a ajouter dans la maquette principale:
+	image/accueil/
+	
+a remplacer dans la maquette principale:
+	Pages/Accueil.html
+	style/css/style__Accueil.css
