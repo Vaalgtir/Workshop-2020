@@ -1,0 +1,58 @@
+.banner .wrapperTestLink {
+    background-color: #90CAF9;
+    display: grid;
+    margin-top: 5rem;
+    text-align: center;
+    padding: 2rem 2rem;
+    align-items: center;
+  }
+  .banner .wrapperTestLink p {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: "Montserrat", sans-serif;
+  }
+  .banner .wrapperTestLink .or {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .banner .wrapperTestLink .mapTestButton {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    color: #424242;
+  }
+  .banner .wrapperTestLink .mapTestButton:hover {
+    text-decoration: none;
+    color: #5990de;
+    background-color: white;
+    border: solid 2px #5990de;
+  }
+  .banner .wrapperTestLink .testButton {
+    color: #424242;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+  }
+  .banner .wrapperTestLink .testButton:hover {
+    text-decoration: none;
+    color: #5990de;
+    background-color: white;
+    border: solid 2px #5990de;
+  }
+  
+@media screen and (min-width: 1200px) {
+    .banner .wrapperTestLink {
+      gap: 1rem;
+      grid-template-columns: 1fr 3fr 1fr;
+    }
+    .banner .wrapperTestLink .testLogiciel {
+      margin: 1rem auto;
+      grid-column: 2/3;
+    }
+    .banner .wrapperTestLink .testLogiciel__button {
+      margin: 1rem auto;
+      grid-row: 2/3;
+      grid-column: 2/3;
+    }
+}

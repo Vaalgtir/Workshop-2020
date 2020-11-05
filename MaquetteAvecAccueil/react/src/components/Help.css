@@ -1,0 +1,65 @@
+@keyframes toggleUpDown {
+    from {
+      transform: translateY(-5px);
+    }
+    to {
+      transform: translateY(5px);
+    }
+  }
+
+.wrapperHelp .title {
+    color: #09E00D;
+    text-align: center;
+    border-bottom: solid #09E00D 1px;
+    margin: 1rem 10% 2rem 10%;
+  }
+  .wrapperHelp .title h1 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 100;
+  }
+  .wrapperHelp .title .chevron {
+    padding-top: 1rem;
+    cursor: pointer;
+  }
+  .wrapperHelp .title .chevron:hover {
+    animation: toggleUpDown 400ms ease-in-out infinite alternate;
+  }
+
+  .wrapperHelp .wrapperContent .line {
+    display: grid;
+    column-gap: 2rem;
+    align-items: center;
+  }
+  .wrapperHelp .wrapperContent .line img {
+    max-width: 100%;
+    box-shadow: 0.4rem 0.3rem 0.4rem 0rem #BDBDBD;
+  }
+.wrapperHelp .wrapperContent .line div h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 100;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.wrapperHelp .wrapperContent .line div p {
+  color: #585858;
+  margin: 1rem 0 1rem 1rem;
+}
+.wrapperHelp .wrapperContent .line2 {
+  row-gap: 2rem;
+  align-items: flex-start;
+}
+.wrapperHelp .wrapperContent .line2 h2 {
+  margin-top: 1rem;
+}
+
+@media screen and (min-width: 1200px) {
+    .wrapperHelp .title h1 {
+        font-size: 3rem;
+    }    
+    .wrapperHelp .wrapperContent .line {
+      margin: 0 20% 2rem 20%;
+      padding-top: 4rem;
+      text-align: center;
+      /* grid-template-columns: repeat(8, 1fr); */
+    }
+}

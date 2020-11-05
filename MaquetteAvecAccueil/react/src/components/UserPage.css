@@ -1,0 +1,228 @@
+@charset "UTF-8";
+.nndvpContent {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto sans", sans-serif;
+}
+
+.testButton {
+  text-align: center;
+  cursor: pointer;
+  color: black;
+  background-color: #ffa100;
+  border-radius: 2rem;
+  border: solid 2px #ffa100;
+  transition: all 500ms;
+}
+
+.testButton:hover {
+  text-decoration: none;
+  color: #5990de;
+  background-color: white;
+  border: solid 2px #5990de;
+}
+
+body {
+  background-color: #FAFAFA;
+  color: #616161;
+}
+nav .wrapperIcon {
+    display: flex;
+    align-items: center;
+}
+nav .wrapperIcon a {
+    text-decoration: none;
+    color: #616161;
+}
+nav .wrapperIcon .button__help {
+    transition: all 500ms;
+}
+nav .wrapperIcon .button__help:hover {
+    color: #62FA7D;
+    cursor: pointer;
+  }
+nav .wrapperIcon .button__logout {
+    margin-left: 2rem;
+    color: #4DE3AA;
+    transition: all 500ms;
+}
+nav .button__logout:hover {
+  color: #62FA7D;
+  cursor: pointer;
+}
+nav h1 {
+  font-weight: 500;
+  font-size: 2rem;
+  font-family: "Anton", sans-serif;
+}
+nav .logo {
+  height: 100%;
+}
+nav .logo img {
+  margin-left: 3rem;
+  height: 100%;
+}
+
+ .wrapperUserPage {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  margin-bottom: 0;
+}
+ 
+#infoPerso{
+  width: 90%;
+  margin: 0 auto;
+  background-color: #cbcdcc;
+  border-radius: 15px;
+  height: 120%;
+}
+
+#infoPerso h3{
+  text-align: center;
+  width: 100%;
+  padding: 1rem 0;
+  background-color: #c3e8b9;
+  font-family: 'Black Ops One', cursive;
+  font-size: x-large;
+}
+
+.col__stat{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 93%;
+  width: 95%;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+  align-content: flex-start;
+}
+
+.col__stat >div{
+  width: 46%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.bg-danger{
+  background-color: #ffcccb !important;
+}
+
+.bg-secondary{
+  background-color: #acb0ae !important;
+}
+
+.bg-success{
+  background-color: #d2e9af !important;
+}
+
+
+.trajet, .mesure{
+  margin: 1rem;
+  border-radius: 15px;
+  display:flex;
+
+}
+
+.trajet{
+
+  height: 60%;
+  color: black;
+
+}
+
+.mesure{
+  
+  height: 20%;
+  
+}
+
+.mesure.mesure__empreinteC{
+  
+  color: green;
+}
+
+
+.mesure.mesure__scoreC{
+  color: red;
+}
+
+.col__stat h4, .col__stat span{
+  width: 100%;
+  text-align: center;
+  margin: 0.75rem;
+}
+
+
+
+
+.wrapperUserPage .col__friend {
+  transition: all 500ms;
+  padding: 1rem 0 0 1rem;
+  border-radius: 0.5rem;
+  border: solid 1px darkgrey;
+  width: 250px;
+  margin-left: 15px;
+}
+.col__friend h3{
+  margin-right: 25px;
+  color: #e4e4e4;
+  text-align: center;
+  border: solid 3px dodgerblue;
+  background-color: dodgerblue;
+  border-radius: 25px;
+}
+.col__friend ul{
+  margin-left: 25px;
+  list-style: none;
+}
+.col__friend li{
+  margin-top: 5px;
+}
+.col__friend li img{
+  width: 35px;
+  height: 35px;
+  border-radius: 35px;
+  display: inline;
+  margin-right: 5px;
+}
+.col__friend:hover {
+  transform: scale(1.05) translateX(5%) translateY(5%);
+  background-color: #e4e4e4;
+}
+.col__friend div {
+  justify-content: space-around;
+  font-size: 1.2rem;
+}
+.friend__list {
+  display: block;
+}
+.friend__list ul {
+  padding-top: 2rem;
+}
+.friend__list ul li {
+  cursor: pointer;
+  transition: all 500ms;
+}
+.friend__list ul li:hover {
+  color: #1a941c;
+}
+
+.wrapperTestBtn {
+  display: flex;
+  justify-content: space-around;
+}
+.wrapperTestBtn .testButton {
+  font-size: 1.3rem;
+  padding: 1rem 5rem;
+}

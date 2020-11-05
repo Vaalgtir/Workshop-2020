@@ -1,0 +1,126 @@
+body {
+  background-color: #FAFAFA;
+}
+main .title {
+    color: #09E00D;
+    text-align: center;
+    border-bottom: solid #09E00D 1px;
+    margin: 1rem 10% 2rem 10%;
+  }
+  main .title h1 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 100;
+  }
+  main .title .chevron {
+    padding-top: 1rem;
+    cursor: pointer;
+  }
+  main .title .chevron:hover {
+    animation: toggleUpDown 400ms ease-in-out infinite alternate;
+  }
+  main .wrapperContent .line {
+    display: grid;
+    column-gap: 2rem;
+    align-items: center;
+  }
+  main .wrapperContent .line img {
+    max-width: 100%;
+    box-shadow: 0.4rem 0.3rem 0.4rem 0rem #BDBDBD;
+  }
+  main .wrapperContent .line .borderFade {
+    box-shadow: none;
+  }
+  main .wrapperContent .line div h2 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 100;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  main .wrapperContent .line div p {
+    color: #585858;
+    margin: 1rem 0 1rem 1rem;
+  }
+  main .wrapperContent .line div p a {
+    font-size: 0.95rem;
+  }
+  main .wrapperContent .line2 {
+    row-gap: 2rem;
+    align-items: flex-start;
+  }
+  main .wrapperContent .line2 h2 {
+    margin-top: 1rem;
+  }
+  main .wrapperContent .line2:hover .contactSheet {
+    height: 681px;
+  }
+  main .wrapperContent .line:first-child .img__line1 {
+    box-shadow: none;
+  }
+  main .wrapperContent .dropdownArticle {
+    display: none;
+    padding: 0 20% 3rem 20%;
+    opacity: 0;
+  }
+  main .wrapperContent .dropdownArticleButton {
+    cursor: pointer;
+    color: #5990de;
+    transition: all 400ms;
+    text-align: center;
+  }
+  main .wrapperContent .dropdownArticleButton i {
+    color: #5990de;
+    transition: all 400ms;
+    transform: translateY(0px);
+  }
+  main .wrapperContent .dropdownArticleButton:hover {
+    color: #ffa100;
+    text-decoration: none;
+  }
+  main .wrapperContent .dropdownArticleButton:hover i {
+    color: #ffa100;
+    transform: translateY(2px);
+  }
+  main .wrapperContent .down i {
+    transform: rotate(180deg);
+  }
+  main .wrapperContent .down:hover i {
+    transform: rotate(180deg);
+  }
+  
+@media screen and (min-width: 1200px) {
+    main .title h1 {
+      font-size: 3rem;
+    }
+    main .wrapperContent .line {
+      margin: 0 20% 2rem 20%;
+      padding-top: 4rem;
+      text-align: center;
+    }
+    main .wrapperContent .img__line1 {
+      grid-column: 1/5;
+    }
+    main .wrapperContent .content__line1 {
+      grid-column: 5/8;
+    }
+    main .wrapperContent .dropdownArticle--line1 {
+      grid-column: 1/9;
+    }
+    main .wrapperContent .img__line2 {
+      grid-column: 5/9;
+    }
+    main .wrapperContent .content__line2 {
+      grid-column: 1/5;
+    }
+    main .wrapperContent .img__line3 {
+      grid-column: 1/4;
+    }
+    main .wrapperContent .content__line3 {
+      grid-column: 5/9;
+    }
+    main .wrapperContent .img__line4 {
+      grid-column: 5/9;
+    }
+    main .wrapperContent .content__line4 {
+      grid-column: 1/5;
+    }
+}

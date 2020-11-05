@@ -1,0 +1,111 @@
+.containerPopup {
+    position: fixed;
+    z-index: 6;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .containerPopup i {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    cursor: pointer;
+    transition: color 400ms;
+  }
+  .containerPopup i:hover { 
+    color: #5990de;
+  }
+  .containerPopup .wrapperPopup {
+    text-align: center;
+    position: fixed;
+    background-color: white;
+    border-radius: 0.5rem;
+  }
+  .containerPopup .wrapperPopup .disclaimer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5rem;
+    background-color: #5990de;
+    font-size: 1.5rem;
+    color: white;
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+  .containerPopup .wrapperPopup .wrapperInput {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .containerPopup .wrapperPopup .wrapperInput .wrapperLabelContent {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.5rem;
+  }
+  .containerPopup .wrapperPopup .wrapperInput .wrapperLabelContent input {
+    grid-row: 2/3;
+    padding: 0.5rem;
+  }
+  .containerPopup .wrapperPopup .wrapperInput .wrapperLabelContent label {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  .containerPopup .wrapperPopup .wrapperInput .wrapperLabelContent label span {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    transition: all 400ms ease-in-out;
+  }
+  .containerPopup .wrapperPopup .wrapperInput .wrapperLabelContent label .contentWritten {
+    transform: translateY(-2.2rem);
+    opacity: 0.8;
+  }
+  .containerPopup .wrapperPopup .wrapperButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .containerPopup .wrapperPopup .submitButton {
+    padding: 0.5vh 2rem;
+    margin-top: 0.5rem;
+  }
+  .containerPopup .wrapperPopup .submitButton {
+    padding: 0.5vh 2rem;
+    margin-top: 0.5rem;
+  }
+
+  .submitButton {
+    cursor: pointer;
+    color: black;
+    background-color: #ffa100;
+    border-radius: 2rem;
+    border: solid 2px #ffa100;
+    transition: all 500ms;
+  }
+  .submitButton:hover {
+    text-decoration: none;
+    color: #5990de;
+    background-color: white;
+    border: solid 2px #5990de;
+  }
+
+@media screen and (min-width: 1200px) {
+    .containerPopup .wrapperPopup {
+        width: 30%;
+        height: 69vh;
+    }
+    .containerPopup .wrapperPopup .wrapperInput {
+        gap: 1rem;
+        margin: 1.5rem 3rem;
+    }
+}
