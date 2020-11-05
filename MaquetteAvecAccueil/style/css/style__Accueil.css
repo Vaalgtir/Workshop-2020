@@ -129,11 +129,11 @@ section {
 .col__stat >div{
   width: 46%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  
   align-content: center;
   flex-wrap: wrap;
 }
+
 
 .bg-danger{
   background-color: #ffcccb !important;
@@ -157,14 +157,38 @@ section {
 
 .trajet{
 
-  height: 60%;
+  height: 50%;
   color: black;
 
 }
 
+.trajet h4, .mesure h4{
+  align-self: start;
+  position: relative;
+
+}
+
+
+.trajet h4{
+  top: -27%;
+}
+
+.mesure h4{
+  top: -13%;
+}
+
+.trajet span, .mesure span{
+  position: relative;
+  top: -7.5%;
+  font-size: 1.5rem;
+}
+
+
+
+
 .mesure{
   
-  height: 20%;
+  height: 30%;
   
 }
 
